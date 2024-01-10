@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Imagecomponent } from "./components/imagecomponent/image";
+import { Olcomponent } from "./components/olcomponent/ol";
+import { Tablecompoent } from "./components/tablecomponent/table";
+import { Ulcomponent } from "./components/ulcomponent/ul";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Tablecompoent/>
+    <Ulcomponent/>
+    <Olcomponent/>
+    <Imagecomponent/>
     </div>
+    
+
+
+
+    
   );
 }
 
