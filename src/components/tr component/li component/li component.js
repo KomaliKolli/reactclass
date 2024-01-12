@@ -1,14 +1,19 @@
-import UlComponent from "../ul component/ul component";
+
 
 
 
 var LiComponent=()=>{
+    const color={
+        color:"blue",
+        
+        
+    }
     return(
         <div>
-        <li>mango</li>
-        <li>apple</li>
-        <li>grapes</li>
-        <li>Kiwi</li>
+        <li style={color}>mango</li>
+        <li style={color}>apple</li>
+        <li style={color}>grapes</li>
+        <li style={color}>Kiwi</li>
         </div>
         
         

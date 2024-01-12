@@ -4,7 +4,7 @@ import LiComponent from "../li component/li component";
 
 var UlComponent=()=>{
     return(
-        <ul>
+        <ul style={{backgroundColor:"violet"}}>
            <LiComponent></LiComponent>
         </ul>
     );

@@ -9,7 +9,7 @@ import UlComponent from './components/tr component/ul component/ul component';
 function App() {
   return (
     <div>
-   <table>
+   <table style={{backgroundColor:"black"}}>
    <Trcomponent/>
 
    </table>
