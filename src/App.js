@@ -5,8 +5,8 @@ import { Parentcomponent } from "./components/props/parent";
 function App() {
   return (
     <>
-      <Parentcomponent></Parentcomponent>
-      {/* <Counter/> */}
+      {/* <Parentcomponent></Parentcomponent> */}
+      <Counter/>
     </>
   );
 }
