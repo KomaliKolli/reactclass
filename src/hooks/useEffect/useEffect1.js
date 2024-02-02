@@ -42,19 +42,20 @@ export const UseEffectEx1=()=>{
     )
 
 }
-const ProductsListing=({data})=>{
-    return(
-        <>
-        <div>
-            <h3 style={{color:"blue"}}>{data.id}</h3>
+// export const ProductsListing=({data})=>{
+//     return(
+//         <>
+//         <div>
+//             <h3 style={{color:"blue"}}>{data.id}</h3>
            
-            <h4 style={{color:"red"}}>{data.category}</h4>
-            <h3 >{data.title}</h3>
-            <h4 style={{color:"green"}}>{data.description}</h4>
-            <img src={data.image} style={{width:"100px"}}/>
+//             <h4 style={{color:"red"}}>category:{data.category}</h4>
+//             <h3 >title:{data.title}</h3>
+           
+//             <img src={data.image} style={{width:"100px"}}/>
+//             <h6 style={{color:"green"}}>{data.description}</h6>
 
-        </div>
+//         </div>
 
-        </>
-    )
-}
+//         </>
+//     )
+// }

@@ -6,9 +6,26 @@ import { HomeScreen } from "../screens/post-LoginScreens/homeScren"
 import { ProductScreen } from "../screens/post-LoginScreens/productsScreen"
 import { SettingScreen } from "../screens/post-LoginScreens/settingScreen"
 import Navbar from "../Navbar/navbar"
+import {  ProductDetails } from "../screens/post-LoginScreens/productDetails"
+import { createContext, useState } from "react"
 
+
+export const DataShare = createContext()
 export const NavigationStack=()=>{
+
+
+
+    const [name,setName]=useState("10kCoders")
+    const [darkTheme,setDarkTheme]=useState(false)
+
+    // to change local state
+    const changeTheme=()=>{
+        setDarkTheme(!darkTheme)
+    }
+
+    ///
     return(
+        <DataShare.Provider value={{name,darkTheme,changeTheme}}>
         <BrowserRouter>
         <Routes>
         <Route path="/" Component={Navbar} />
@@ -16,6 +33,8 @@ export const NavigationStack=()=>{
         <Route path="/home" Component={HomeScreen}   />
         <Route path="/product" Component={ProductScreen}    />
         <Route path="/setting" Component={SettingScreen}    />
+
+        <Route path="/ProductDetails/:id" Component={ProductDetails}/>
             
         </Routes>
 
@@ -25,5 +44,6 @@ export const NavigationStack=()=>{
 
 
         </BrowserRouter>
+        </DataShare.Provider>
     )
 }
