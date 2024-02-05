@@ -8,6 +8,10 @@ import { SettingScreen } from "../screens/post-LoginScreens/settingScreen"
 import Navbar from "../Navbar/navbar"
 import {  ProductDetails } from "../screens/post-LoginScreens/productDetails"
 import { createContext, useState } from "react"
+import InvalidScreen from "../screens/invalidScreen"
+import { PostLogin } from "./postLoginRoutes"
+import PreLogin from "./preLoginRoutes"
+import { LoginScreen } from "../screens/preLoginScreens/loginScreen"
 
 
 export const DataShare = createContext()
@@ -17,17 +21,21 @@ export const NavigationStack=()=>{
 
     const [name,setName]=useState("10kCoders")
     const [darkTheme,setDarkTheme]=useState(false)
+    const [login,setLogin]=useState(false)
 
     // to change local state
     const changeTheme=()=>{
         setDarkTheme(!darkTheme)
     }
+    const loginTrue=()=>{
+        setLogin(true)
+    }
 
     ///
     return(
-        <DataShare.Provider value={{name,darkTheme,changeTheme}}>
+        <DataShare.Provider value={{name,darkTheme,changeTheme,loginTrue}}>
         <BrowserRouter>
-        <Routes>
+        {/* <Routes>
         <Route path="/" Component={Navbar} />
         <Route path="/about" Component={AboutScreen}    />
         <Route path="/home" Component={HomeScreen}   />
@@ -35,8 +43,15 @@ export const NavigationStack=()=>{
         <Route path="/setting" Component={SettingScreen}    />
 
         <Route path="/ProductDetails/:id" Component={ProductDetails}/>
+        <Route path="*" Component={InvalidScreen}/>
             
-        </Routes>
+        </Routes> */}
+        {
+            true ?
+            <PostLogin/>
+            :
+            <PreLogin/>
+        }
 
 
 

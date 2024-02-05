@@ -1,10 +1,14 @@
-import { useRef ,useState} from "react"
+import { useContext, useRef ,useState} from "react"
+import { DataShare } from "../../../navigationStack/navigation"
 
 
 export const Uncontrolled=()=>{
     const emailRef=useRef()
     const passwordRef=useRef()
     const [error,setError]=useState("")
+    const {loginTrue}=useContext(DataShare)
+
+
     const hitServer=(data)=>[
       fetch('https://dummyjson.com/auth/login', {
   method: 'POST',
@@ -18,7 +22,11 @@ export const Uncontrolled=()=>{
     setError(res.message)
   }
   else{
+    console.log(res)
     alert("login successfull")
+    loginTrue()
+    localStorage.setItem("userLoginInfo",JSON.stringify(res))
+    setError("")
   }
 })
 .catch(err=>console.log(err))
